@@ -1,0 +1,506 @@
+/* George Poelcher III 
+GIT 417 - Prof. Bailey
+Final Project */
+
+/*
+IMPORTING AND CUSTOM VARIABLES 
+*/
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+:root{
+    /*Base Colors - These are here so I can grab from my palette as I make dark mode theme choices*/
+    --black: #191919;
+    --white: #faf9f6;
+    --red: #dd2020;
+    --light-gray: #cdcdcd;
+    --dark-gray: #a5a2a2;
+
+    /*Universal Values*/
+    --main-font: "Geologica", sans-serif;
+    --product-shadow: drop-shadow(0px 5px 5px var(--black));
+    --padding-x: 50px;
+    --padding-y: 50px;
+
+    /*Light Mode Colors*/
+    --accent: #dd2020;
+    --bg-1: #faf9f6;
+    --bg-2: #dd2020;
+    --text-1: #191919;
+    --text-2: #faf9f6;
+
+    /*Button Colors*/
+    --figure-body: #faf9f6;
+    --button-body: #cdcdcd;
+    --button-text: #191919;
+    --button-hover: #dd2020;
+    --button-text-hover: #faf9f6;
+
+}
+
+/*Class added to HTML to enable/disable darkmode. Overrides :root.*/
+.dark-mode{
+    --product-shadow: drop-shadow(0px 3px 3px var(--light-gray));
+    --accent: #ff3030;
+    --text-1: #faf9f6;
+    --text-2: #191919;
+    --bg-1: #191919;
+    --bg-2: #faf9f6;
+
+    --figure-body: #191919;
+    --button-body: #faf9f6;
+    --button-hover: #dd2020;
+}
+
+/*
+CSS RESET
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+CUSTOM STYLES STARTS HERE
+*/
+
+/*Global Styles*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--main-font);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/*Little addition to CSS to make the darkmode theme transition nicely.*/
+*{
+    transition: color, background-color 0.5s ease;
+}
+
+/*Reused button asset throughout website to external sites.*/
+section .link-button{
+    border: 3px solid var(--black);
+    padding: 20px 60px;
+    border-radius: 40px;
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--button-text);
+    background: var(--button-body);
+}
+
+section .link-button:hover{
+    transition: all 0.5s ease;
+    color: var(--button-text-hover);
+    background: var(--button-hover);
+}
+
+main > section{
+    padding: var(--padding-x) var(--padding-y);
+}
+
+button{
+    font-family: var(--main-font);
+}
+
+p, h2, h3, h4{ 
+    margin-bottom: 20px;
+}
+
+p:not(footer p){
+    max-width: 65ch;
+}
+
+h1, h2, h3, h4{
+    font-weight: 600;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+h4{
+    font-size: 1.25rem;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.hidden{
+    display: none;
+}
+
+.required{
+    color: var(--accent);
+}
+
+/*I had to research this a bit. I was having an issue where the embedded object within buttons
+was not activating the event listener if I clicked the button where the SVG was. My research led
+to learning that because of the way the DOM interprets button and object that this could stop
+the interference with the two.
+
+I read about the implications of pointer-events on the Mozilla Developer documentation.
+*/
+button object{
+    pointer-events: none;
+}
+
+button:hover{
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/*Header Styles*/
+header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background: var(--bg-2);
+    padding: 25px;
+    align-items: center;
+    justify-content:space-between;
+    color: var(--text-2);
+}
+
+header a{
+    color: var(--text-2);
+}
+
+header nav ul{
+    display: flex;
+    gap: 60px;
+}
+
+nav ul li a:hover{
+    border-bottom: 2px solid var(--text-2);
+}   
+
+header button{
+    height: 45px;
+    width: 45px;
+    border-radius: 45px;
+    border: 2px solid var(--text-2);
+    background-color: transparent;
+    transition: all 0.5s ease;
+}
+
+header svg{
+    stroke: var(--text-2);
+    fill: var(--text-2);
+    transition: transform 0.3s ease;
+}
+
+/*Hero Styles*/
+/*I used a small linear gradient with this image to make the Hero Section more legible
+while also remaining stylized with the background image.*/
+#hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(images/hero_photo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 200px 60px;
+    align-items: center;
+
+    color: var(--white);
+    
+}
+
+/*Overview Styles*/
+#overview{
+    background-color: var(--bg-1);
+    color: var(--text-1);
+}
+
+#overview section:first-of-type{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    color: var(--text-1);
+    padding: 50px 0px;
+    width: 100%;
+}
+
+#overview section:last-of-type p:first-of-type{
+    margin-bottom: 50px;
+}
+
+#overview section:first-of-type img{
+    border-radius: 15px;
+    max-width: 600px;
+}
+
+#overview section:last-of-type{
+    padding: var(--padding-y) 0;
+    display: grid;
+    grid-template-areas: "head head"
+                         "text text"
+                         "products checkout";
+}
+
+#overview section:last-of-type h3{
+    grid-area: head;
+}
+
+#overview section:last-of-type p{
+    grid-area: text;
+}
+
+#products{
+    grid-area: products;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-right: 20px;
+}
+
+.product-card{
+    background-color: var(--figure-body);
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    filter: var(--product-shadow);
+}
+
+.product-card img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid var(--figure-body);
+    margin-bottom: 10px;
+}
+
+.product-card button{
+    font-size: 1.15rem;
+    height: 50px;
+    width: 150px;
+    margin-bottom: 10px;
+    border-radius: 40px;
+    background-color: var(--button-body);
+    color: var(--button-text);
+}
+
+.product-card button:hover{
+    background-color: var(--button-hover);
+    color: var(--button-text-hover);
+}
+
+#checkout-div{
+    grid-area: checkout;
+}
+
+#cart-items li{
+    margin-bottom: 20px;
+}
+
+
+#cart-items li button{
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    float: right;
+    background-color: var(--button-body);
+}
+
+#cart-items li button:hover{
+    background-color: var(--button-hover);
+}
+
+#cart-items li:last-of-type{
+    font-weight: 600;
+}
+
+/*Styling the buttons within each itemized line*/
+#checkout-div button:not(#cart-items button){
+    font-size: 1.15rem;
+    padding: 20px;
+    border-radius: 40px;
+    width: 50%;
+    margin-top: 50px;
+    background-color: var(--button-body);
+    color: var(--button-text);
+}
+#checkout-div button:not(#cart-items button):hover{
+    color: var(--button-text-hover);
+    background-color: var(--button-hover);
+}
+
+/*Redeem Styles*/
+#redeem{
+    background-color: var(--bg-1);
+    color: var(--text-1);
+}
+
+#rewards-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+#rewards-div .product-card{
+    max-width: 350px;
+}
+
+#ambassador{
+    display: grid;
+    grid-template-areas: "head head"
+                         "p img";
+                         
+    background: var(--bg-2);
+    color: var(--text-2);
+}
+
+#ambassador img{
+    border-radius: 15px;
+    grid-area: img;
+    max-width: 600px;
+    margin-left: 50px;
+}
+
+#ambassador div{
+    grid-area: p;
+    max-width: 45ch;
+}
+
+#ambassador h2{
+    grid-area: head;
+}
+
+/*Apply Section*/
+#apply{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-1);
+    color: var(--text-1);
+}
+
+input, textarea{
+    font-family: var(--main-font);
+    font-size: 1.15rem;
+    font-weight: normal;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+#apply form{
+    margin: 20px 0;
+    width: 50%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-element{
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+}
+
+.error-span{
+    color: var(--accent);
+    font-size: 1.05rem;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+legend{
+    margin-bottom: 30px;
+}
+
+fieldset div{
+    display: flex;
+}
+
+input:not(input[type^="radio"], input[type^="submit"]){
+    height: 50px;
+}
+
+input[type^="radio"]{
+    height: 25px;
+    width: 25px;
+    margin-right: 15px;
+    accent-color: var(--accent);
+}
+
+input[type^="submit"]{
+    padding: 20px;
+    border: 3px solid var(--black);
+    background-color: var(--button-body);
+    color: var(--button-text);
+    border-radius: 40px;
+}
+input[type^="submit"]:hover{
+    cursor: pointer;
+    color: var(--button-text-hover);
+    background-color: var(--button-hover);
+    transition: all .25s ease;
+}
+
+footer{
+    background-color: var(--bg-2);
+    color: var(--text-2);
+    text-align: center;
+    padding: 50px 0;
+}

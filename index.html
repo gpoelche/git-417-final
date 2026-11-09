@@ -1,0 +1,252 @@
+<!-- George Poelcher III
+GIT 417 - Prof. Bailey 
+Final Project -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="George Poelcher III">
+        <meta name="description" content="This is a mockup website for Club Nintendo; this website is a submission for the GIT 417 Final.">
+        <meta name="keywords" content="club nintendo, nintendo, mynintendo, nintendo rewards, nintendo switch, nintendo switch 2">
+
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <script src="main.js" defer></script>
+
+        <title>Club Nintendo - About</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Club Nintendo</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#redeem">Redeem</a></li>
+                    <li><a href="#ambassador">Ambassador</a></li>
+                    <li><a href="#apply">Apply</a></li>
+                </ul>
+            </nav>
+
+             <button id="dark-mode"><svg xmlns="http://www.w3.org/2000/svg" height="23px" viewBox="0 -960 960 960" width="23px" fill="#e3e3e3"><path d="M396-396q-32-32-58.5-67T289-537q-5 14-6.5 28.5T281-480q0 83 58 141t141 58q14 0 28.5-2t28.5-6q-39-22-74-48.5T396-396Zm57-56q51 51 114 87.5T702-308q-40 51-98 79.5T481-200q-117 0-198.5-81.5T201-480q0-65 28.5-123t79.5-98q20 72 56.5 135T453-452Zm290 72q-20-5-39.5-11T665-405q8-18 11.5-36.5T680-480q0-83-58.5-141.5T480-680q-20 0-38.5 3.5T405-665q-8-19-13.5-38T381-742q24-9 49-13.5t51-4.5q117 0 198.5 81.5T761-480q0 26-4.5 51T743-380ZM440-840v-120h80v120h-80Zm0 840v-120h80V0h-80Zm323-706-57-57 85-84 57 56-85 85ZM169-113l-57-56 85-85 57 57-85 84Zm671-327v-80h120v80H840ZM0-440v-80h120v80H0Zm791 328-85-85 57-57 84 85-56 57ZM197-706l-84-85 56-57 85 85-57 57Zm199 310Z"/></svg></button>
+        </header>
+
+        <main>
+            <section id="hero">
+                <h2>Power Up Your Play with Club Nintendo!</h2>
+                <p>Looking to get even more value out of your MyNintendo
+                    account and Nintendo eShop purchases? Club Nintendo is
+                    designed at its core to give back to the gamers that love
+                    to play as much as we do. Link your MyNintendo account to
+                    start earning rewards with each purchase in the Nintendo
+                    eShop now.
+                </p>
+
+                <a href="#" class="link-button">Link Accounts</a>
+            </section>
+
+            <section id="overview">
+                <h2>Learn More About Club Nintendo</h2>
+                <p>Are you new to Club Nintendo? Learn everything you need to know about the program on this page so you can get started today! This page specifically covers inforamtion on earning points, redeeming points and the Club Nintendo Ambassador Program.</p>
+
+                <section>
+                    <div>
+                        <h3>How Do I Earn Points?</h3>
+                        <p>All purchases of physical and/or digital software,
+                            amiibo and eligible merchandise through the Nintendo eShop
+                            will automatically deposit earned points to your MyNintendo
+                            account. Members will receive three points for every one dollar
+                            they spend in each transaction.
+                        </p>
+
+                        <p>These points can be redeemed for exclusive items within the Club
+                            Nintendo Member's Shop! Points may also be redeemed as credit
+                            towards a purchase made through the Nintendo eShop (one dollar is
+                            redeemed for every fifteen points earned).
+                        </p>
+                    </div>
+
+                    <img src="images/earn_photo.jpg" alt="">
+                </section>
+
+                <section>
+                    <h3>Our Recommendations</h3>
+                    <p>There are many excellent titles on the Nintendo eShop
+                        available for purchase, but these are some that we think
+                        you'll love based on what other members are enjoying
+                        right now.
+                    </p>
+
+                    <div id="products">
+                        <div class="product-card">
+                            <img src="images/product-images/cover_kirby-air.png" alt="Kirby riding a warp star while racing against other characters">
+                            <h4>Kirby Air Riders</h4>
+                            <p>$69.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="images/product-images/cover_metroid-prime.png" alt="Samus reaching toward the foreground with a glowing hand">
+                            <h4>Metroid Prime 4 Beyond</h4>
+                            <p>$69.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="images/product-images/cover_pokemon-legends.png" alt="Pokemon trainers battling in a city at night, a large ring of Pokemon surrounds them">
+                            <h4>Pokemon Legends: Z-A</h4>
+                            <p>$69.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+
+                        <div class="product-card">
+                            <img src="images/product-images/cover_mario-kart.png" alt="Mario and many other characters are all racing toward the foreground holding various items">
+                            <h4>Mario Kart World</h4>
+                            <p>$79.99</p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div id="checkout-div">
+                        <h4>Quick Checkout</h4>
+                        <ul id="cart-items">
+                        </ul>
+
+                        <button class="hidden">Checkout</button>
+
+                        <p id="message-span">Products will appear here as you add them!</p>
+                    </div>
+                </section>
+            </section>
+
+            <section id="redeem">
+                <h2>Redeem Points for Super Rewards</h2>
+                <p>Club Nintendo Members have access to an online shop full of
+                    exclusive items available for purchase with acquired points.
+                    Our selection of available items rotates seasonally, so be
+                    sure to browse our stock from time to time!
+                </p>
+
+                <p>Here are some of the highlights of our current rotation:</p>
+
+                <div id="rewards-div">
+                    <div class="product-card">
+                        <img src="images/product-images/reward_totodile.png" alt="Stuffed animal resembling the Pokemon Totodile">
+                        <h4>Pokemon - Totodile Plushie</h4>
+                        <p>75 points</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/product-images/reward_emmi.png" alt="Small figurine of the E.M.M.I. robot character from Metroid">
+                        <h4>Metroid Dread - E.M.M.I. Figure</h4>
+                        <p>120 points</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/product-images/reward_barrel.png" alt="Ceramic mug with the base resembling a barrel from Donkey Kong">
+                        <h4>Donkey Kong - Banana Mug</h4>
+                        <p>90 points</p>
+                    </div>
+                </div>
+
+                <p>You can view more items available with points redemption at
+                    the full Club Nintendo Member's Shop.
+                </p>
+
+                <a href="#" class="link-button">Visit the Store</a>
+            </section>
+
+            <section id="ambassador">
+                <h2>Earn Exclusive Drops with Club Nintendo Ambassadors</h2>
+                
+                <div>
+                    <p>Nintendo is proud to announce that players can earn more with
+                        their Club Nintendo membership by tuning to content creators who've
+                        partnered with us as Club Nintendo Ambassadors!
+                    </p>
+
+                    <p>By linking various streaming and/or entertainment accounts with a
+                        MyNintendo account, players can be eligible for receiving exlusive rewards
+                        when watching content from a Club Nintendo Ambassador. Drops from watching
+                        Ambassadors and their content may include bonus points, limited-time icons
+                        and borders for your MyNintendo profile, discounts on select software titles
+                        and more.
+                    </p>
+                </div>
+
+                <img src="images/ambassador_photo.png" alt="Streamer Linkus7 playing a Nintendo video-game during a speedrunning event, cohost and audience rest behind him in background">
+            </section>
+
+            <section id="apply">
+                <h2>Apply for Ambassador Status</h2>
+                <p>Are you a content creator interested in helping your audience
+                    level up? Individuals who may want to join the Club Nintendo Ambassador
+                    Program can fill out the form below to file a formal inquiry. Please be
+                    sure to provide any necessary information regarding your brand, audience
+                    or other details you'd like to share with us in consideration of your 
+                    acceptance.
+                </p>
+
+                <!-- Form action is left as # for html validation since it's not actually sending data anywhere -->
+                <form action="#">
+                    <div class="form-element">
+                        <label for="firstName">First Name<span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        <span class="error-span"></span>
+                    </div>
+
+                    <div class="form-element">
+                        <label for="lastName">Last Name<span class="required">*</span></label>
+                        <input type="text" id="lastName" name="lastName" required>
+                        <span class="error-span"></span>
+                    </div>
+
+                    <div class="form-element">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                        <span class="error-span"></span>
+                    </div>
+
+                    <div class="form-element">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber">
+                        <span class="error-span"></span>
+                    </div>
+
+                    <fieldset>
+                        <legend>Contact Preference<span class="required">*</span></legend>
+
+                        <div>
+                            <input type="radio" id="emailPref" name="contactPref" value="email" required>
+                            <label for="emailPref">Email</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="phonePref" name="contactPref" value="phone">
+                            <label for="phonePref">Phone</label>
+                        </div>
+
+                        <span class="error-span"></span>
+                    </fieldset>
+
+                    <div class="form-element">
+                        <label for="comments">Comments<span class="required">*</span></label>
+                        <textarea name="comments" rows="4" id="comments" required></textarea>
+                        <span class="error-span"></span>
+                    </div>
+
+                    <input type="submit" value="Submit Application">
+                </form>
+
+                <p id="form-message"></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Nintendo Co., Ltd.</p>
+            <p>All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>
