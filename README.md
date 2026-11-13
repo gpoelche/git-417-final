@@ -30,7 +30,7 @@ challenging at the time than other stages of development. If this project were n
 ## Results
 Overall, I was able to successfully complete this project well within the timeline given to me at the end of the class. I received praise from my professor on this project both presenting a 
 believable level of realism and for exceeding expectations for the cart feature implementation. I consider this project to be one of the strongest examples of brand-consistent styling in my portfolio.
-You can view more details on the project's [Behance page.](https://www.behance.net/gallery/239925013/GIT-417-Final-Club-Nintendo-Landing-Page)
+You can view more details on the project's [Behance page.](https://www.behance.net/gallery/239925013/GIT-417-Final-Club-Nintendo-Landing-Page) You can view a video walkthrough of the project [here.](https://drive.google.com/file/d/1YvkHXnXu9LCTLdwaxi_ouVvmEIflVYki/view?usp=sharing)
 
 ## Gallery
 <img width="2048" height="1486" alt="unnamed" src="https://github.com/user-attachments/assets/5d8df4be-6d36-48cd-9406-0b78348017c8" />
