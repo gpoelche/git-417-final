@@ -1,5 +1,7 @@
 # The Club Nintendo About Page: Enhancing User Experience with Basic Scripting
 
+<img width="10667" height="3556" alt="club-nintendo" src="https://github.com/user-attachments/assets/41a31ceb-2d86-4480-b564-d6037e39330b" />
+
 ## Objective
 This site was developed as the final project for my first JavaScript course. The requirements were a single-page, fixed-width 1280px site, themed around a brand, with validated HTML and CSS 
 and no placeholder text. Additionally, basic JavaScript features were required to be implemented: toggleable theme button (light/dark), regex validation on form submission, and a basic 
